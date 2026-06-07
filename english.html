@@ -27,51 +27,51 @@
     <img src="title.jpg">
   </div>
   <div style="text-align: center; margin-bottom: 50px;">
-    <p><a href="english.html">🇺🇲 English version here 🇺🇲</a></p>
+    <p><a href="index.html">🇧🇷 Versão em português aqui 🇧🇷</a></p>
   </div>
   <div style="display: flex; margin: 20px; justify-content: center;">
     <div>
       <div class="controls">
-        <p>Fase pronta do jogo:</p>
+        <p>Game stage ready:</p>
         <div class="input-group">
           <select id="comboA" class="form-select"></select>
           &nbsp; - &nbsp;
           <select id="comboB" class="form-select"></select>
         </div>
         <br>
-        <button id="carrega" onclick="loadMapOnScreen()" class="btn btn-secondary btn-adj">🗺️ Carregar</button>
+        <button id="carrega" onclick="loadMapOnScreen()" class="btn btn-secondary btn-adj">🗺️ Load</button>
       </div>
 
       <div class="controls mt-4">
-        <p>Ações:</p>
-        <button id="solucionar" onclick="solveGame()" class="btn btn-success btn-adj">✓ Solucionar</button>
-        <button id="limpar" onclick="limparMapa()" class="btn btn-warning btn-adj mx-5">🧹 Limpar</button>        
+        <p>Actions:</p>
+        <button id="solucionar" onclick="solveGame()" class="btn btn-success btn-adj">✓ Solve</button>
+        <button id="limpar" onclick="limparMapa()" class="btn btn-warning btn-adj mx-5">🧹 Clear</button>        
       </div>
 
       <div class="controls mt-4">
-        <p>Passo a passo da solução:</p>
+        <p>Solution step by step:</p>
         <!-- Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc. -->
         <textarea id="textarea-solucao" cols="40" rows="3"></textarea>
         <br><br>
-        <button id="first" onclick="firstPage()" class="btn btn-secondary" title="Vai para o primeiro passo">
+        <button id="first" onclick="firstPage()" class="btn btn-secondary" title="Jump to the first step">
           <svg width="24" height="24" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
             <path d="M492.2 477.6c-12 5-25.7 2.2-34.9-6.9L288 301.3 288 448c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9L64 301.3 64 448c0 17.7-14.3 32-32 32S0 465.7 0 448L0 64C0 46.3 14.3 32 32 32S64 46.3 64 64L64 210.7 233.4 41.4c9.2-9.2 22.9-11.9 34.9-6.9S288 51.1 288 64l0 146.7 169.4-169.4c9.2-9.2 22.9-11.9 34.9-6.9S512 51.1 512 64l0 384c0 12.9-7.8 24.6-19.8 29.6z"
             fill="white"/>
           </svg>
         </button>
-        <button id="prev" onclick="prevPage()" class="btn btn-secondary" title="Volta um passo">
+        <button id="prev" onclick="prevPage()" class="btn btn-secondary" title="Go to the previous step">
           <svg width="24" height="24" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
             <path d="M204.3 43.1C215.9 32 233 28.9 247.7 35.2S272 56 272 72l0 136.3 172.3-165.1C455.9 32 473 28.9 487.7 35.2S512 56 512 72l0 368c0 16-9.6 30.5-24.3 36.8s-31.8 3.2-43.4-7.9L272 303.7 272 440c0 16-9.6 30.5-24.3 36.8s-31.8 3.2-43.4-7.9l-192-184C4.5 277.3 0 266.9 0 256s4.5-21.3 12.3-28.9l192-184z"
             fill="white"/>
           </svg>
         </button>
-        <button id="next" onclick="nextPage()" class="btn btn-secondary" title="Avança um passo">
+        <button id="next" onclick="nextPage()" class="btn btn-secondary" title="Go to the next step">
           <svg transform="rotate(180)" width="24" height="24" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
             <path d="M204.3 43.1C215.9 32 233 28.9 247.7 35.2S272 56 272 72l0 136.3 172.3-165.1C455.9 32 473 28.9 487.7 35.2S512 56 512 72l0 368c0 16-9.6 30.5-24.3 36.8s-31.8 3.2-43.4-7.9L272 303.7 272 440c0 16-9.6 30.5-24.3 36.8s-31.8 3.2-43.4-7.9l-192-184C4.5 277.3 0 266.9 0 256s4.5-21.3 12.3-28.9l192-184z"
             fill="white"/>
           </svg>
         </button>
-        <button id="last" onclick="lastPage()" class="btn btn-secondary" title="Vai para o último passo">
+        <button id="last" onclick="lastPage()" class="btn btn-secondary" title="Jump to the last step">
           <svg transform="rotate(180)" width="24" height="24" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
             <path d="M492.2 477.6c-12 5-25.7 2.2-34.9-6.9L288 301.3 288 448c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9L64 301.3 64 448c0 17.7-14.3 32-32 32S0 465.7 0 448L0 64C0 46.3 14.3 32 32 32S64 46.3 64 64L64 210.7 233.4 41.4c9.2-9.2 22.9-11.9 34.9-6.9S288 51.1 288 64l0 146.7 169.4-169.4c9.2-9.2 22.9-11.9 34.9-6.9S512 51.1 512 64l0 384c0 12.9-7.8 24.6-19.8 29.6z"
             fill="white"/>
@@ -81,21 +81,21 @@
       </div>
 
       <div class="controls mt-4">
-        <p>Mapa do jogo - ASCII:</p>
+        <p>Game map - ASCII:</p>
         <div class="mb-4">
           <textarea id="textarea" cols="40" rows="5"></textarea>
           <div id="msg-erro" style="display: none"></div>
         </div>
         
-        <button id="carrega-mapa" onclick="loadMapFromPage()" class="btn btn-success btn-adj">🌐 Enviar</button>
-        <button id="salva-mapa" onclick="saveMapFromPage()" class="btn btn-info btn-adj mx-2">🌏 Obter</button>        
+        <button id="carrega-mapa" onclick="loadMapFromPage()" class="btn btn-success btn-adj">🌐 Send</button>
+        <button id="salva-mapa" onclick="saveMapFromPage()" class="btn btn-info btn-adj mx-2">🌏 Get</button>        
       </div>
     </div>
 
     <!-- Canvas -->
     <div style="width: 374px; margin-left: 50px;">
       <div style="text-align: center; margin-bottom: 5px;">
-        🗺️ Mapa do jogo 🌎
+        🗺️ Game map 🌎
       </div>
       <canvas 
         id="gameCanvas" 
@@ -106,7 +106,7 @@
       <br>
       <div style="margin-top: 20px">
         <div style="text-align: center; margin-bottom: 5px;">
-         Elementos do mapa
+         Map elements
         </div>
         <canvas 
           id="gameTileCanvas" 
@@ -115,7 +115,7 @@
           style="border:1px solid black; margin-left: 46px;">
         </canvas>
         <div style="text-align: center;">
-          Códigos ASCII correspondentes
+          Corresponding ASCII codes
         </div>
       </div>  
     </div>
